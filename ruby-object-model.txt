@@ -1,0 +1,23 @@
+Denver.rb - October Meetup lightning talk
+Intro to the Ruby Object Model
+
+1. Where to Begin?: Inheritance Chain (high level) {BasicObject -> Module etc.}
+  - Given and object and a method call, how does Ruby figure out which method to invoke?
+  - Start at the object's class
+
+2. More on Classes
+  - carry state (why we have them)
+  - Classes point to superclasses (true for every class except for the BasicObject)
+  - This inheritance allows for classes to share attributes of superclasses and have access to superclass methods
+  - see example in ruby file
+  - Also consist of instance variables for the class and instance methods.  Both used on class object instances
+
+3. More on Instances
+  - Create an object by invoking an instance of a class
+  - If not found, go up the inheritance chain and look again
+  - repeat until found or `method_missing` is called
+
+4. Modules
+  - superclass of Class
+  - represent a collection of constants and methods that can be shared amongst multiple classes
+  - do NOT carry state (unlike a class which you can create an instance of)
